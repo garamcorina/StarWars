@@ -41,6 +41,7 @@ export class AppComponent {
     const endItem = page * this.itemsPerPage;
     this.displayedData = this.fetchedData.slice(startItem, endItem);
   }
+  
   // this.nrOfPages = Array.from(
   //   Array(Math.ceil(species.count / 10)),
   //   (_, i) => i
