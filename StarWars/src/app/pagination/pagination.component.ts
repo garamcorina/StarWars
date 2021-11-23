@@ -8,28 +8,23 @@ import { Species } from '../../species';
 })
 export class PaginationComponent implements OnInit {
   @Input() postsData: Species[] = [];
-  @Input() itemsPerPage!: number;
-  @Output() changePage: EventEmitter<number> = new EventEmitter<number>();
-  private _currentPage: number = 1;
+  @Input() hasNext!: boolean;
+  @Input() hasPrevious!: boolean;
+  @Output() onNext: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onPrevious: EventEmitter<number> = new EventEmitter<number>();
+  currentPage: number = 1;
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  get currentPage(): number {
-    return this._currentPage;
-  }
-
-  set currentPage(page) {
-    this._currentPage = page;
-    this.changePage.emit(this.currentPage);
-  }
-
   onNextPage(): void {
     this.currentPage += 1;
+    this.onNext.emit();
   }
 
   onPreviousPage(): void {
     this.currentPage -= 1;
+    this.onPrevious.emit();
   }
 }

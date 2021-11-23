@@ -17,10 +17,13 @@
 </div>
 <div class="pagination__container">
   <div
+    *ngIf="hasPrevious"
     class="pagination__button pagination__page-previous"
     (click)="onPreviousPage()"
   >
     Previous
   </div>
-  <div class="pagination__button" (click)="onNextPage()">Next</div>
+  <div *ngIf="hasNext" class="pagination__button" (click)="onNextPage()">
+    Next
+  </div>
 </div>

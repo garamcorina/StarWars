@@ -1,4 +1,7 @@
 <app-pagination
   [postsData]="displayedData"
-  (changePage)="onPageChange($event)"
+  [hasNext]="!!nextPage"
+  [hasPrevious]="!!previousPage"
+  (onNext)="onNextPage()"
+  (onPrevious)="onPreviousPage()"
 ></app-pagination>
