@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Species } from '../../species';
 
 @Component({
   selector: 'app-pagination',
@@ -7,7 +6,6 @@ import { Species } from '../../species';
   styleUrls: ['./pagination.component.css'],
 })
 export class PaginationComponent implements OnInit {
-  @Input() postsData: Species[] = [];
   @Input() hasNext!: boolean;
   @Input() hasPrevious!: boolean;
   @Output() onNext: EventEmitter<number> = new EventEmitter<number>();

@@ -8,9 +8,7 @@ import { Species } from '../species';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  fetchedData: Species[] = [];
   displayedData: Species[] = [];
-  page = 1;
   nextPage!: string;
   previousPage!: string;
 
@@ -20,7 +18,7 @@ export class AppComponent {
     this.fetchData(`https://swapi.py4e.com/api/species/`);
   }
 
-  fetchData(url:string): void {
+  fetchData(url: string): void {
     const dataObject$ = this.http.get(url);
     dataObject$.subscribe((data: any) => {
       this.displayedData = data.results;
@@ -29,12 +27,10 @@ export class AppComponent {
     });
   }
 
-
   onNextPage() {
-    this.fetchData(this.nextPage)
+    this.fetchData(this.nextPage);
   }
-  onPreviousPage(){
-    this.fetchData(this.previousPage)
+  onPreviousPage() {
+    this.fetchData(this.previousPage);
   }
-
 }

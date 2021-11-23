@@ -1,24 +1,7 @@
-<h2>StarWars species from Swapi API</h2>
-<div>
-  <table class="styled-table">
-    <tr>
-      <th>Name</th>
-      <th>Skin Colors</th>
-      <th>Hair Colors</th>
-      <th>Eye Colors</th>
-    </tr>
-    <tr *ngFor="let item of postsData">
-      <td>{{ item.name }}</td>
-      <td>{{ item.skin_colors }}</td>
-      <td>{{ item.hair_colors }}</td>
-      <td>{{ item.eye_colors }}</td>
-    </tr>
-  </table>
-</div>
 <div class="pagination__container">
   <div
     *ngIf="hasPrevious"
-    class="pagination__button pagination__page-previous"
+    class="pagination__button"
     (click)="onPreviousPage()"
   >
     Previous

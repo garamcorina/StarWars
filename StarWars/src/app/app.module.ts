@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from '../app/app-routing.module';
 import { AppComponent } from './app.component';
+import { DataListComponent } from './data-list/data-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PaginationComponent } from './pagination/pagination.component';
 
@@ -12,7 +13,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
 @NgModule({
-  declarations: [PageNotFoundComponent, AppComponent, PaginationComponent],
+  declarations: [
+    PageNotFoundComponent,
+    AppComponent,
+    PaginationComponent,
+    DataListComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
